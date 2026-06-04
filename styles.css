@@ -75,11 +75,6 @@ h2 {
     gap: 0.6rem;
     text-decoration: none;
 }
-.logo-img {
-    height: 28px;
-    width: auto;
-    display: block;
-}
 .logo-text {
     font-size: 1.35rem;
     font-weight: 700;
@@ -110,23 +105,16 @@ h2 {
     text-align: center;
 }
 .hero .container { max-width: 860px; }
-.eyebrow {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gray);
-    opacity: 0.5;
-    margin-bottom: 2rem;
+.hero h1 {
+    text-transform: lowercase;
 }
-.hero-sub {
-    font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+.hero-tagline {
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
     color: var(--gray);
-    line-height: 1.65;
+    opacity: 0.7;
     margin-bottom: 3rem;
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* CTA Button */
@@ -144,46 +132,212 @@ h2 {
 }
 .cta-button:hover { opacity: 0.88; }
 
-/* Callout */
-.callout {
-    border-left: 4px solid var(--white);
-    background: rgba(255,255,255,0.04);
-    padding: 1.75rem 2rem;
-    margin: 2.5rem 0;
-    font-size: clamp(1.2rem, 2.5vw, 1.45rem);
-    font-weight: 600;
-    line-height: 1.55;
-    color: var(--white);
-}
-
-/* Sections */
-.pain-section      { padding: 8rem 0; background: rgba(255,255,255,0.02); }
-.agitation-section { padding: 8rem 0; }
-.credibility-section { padding: 8rem 0; background: rgba(255,255,255,0.02); }
-.future-section    { padding: 8rem 0; }
+/* Sections shared */
+.what-section      { padding: 8rem 0; background: rgba(255,255,255,0.02); }
+.promise-section   { padding: 8rem 0; }
+.why-section       { padding: 8rem 0; background: rgba(255,255,255,0.02); }
+.process-section   { padding: 8rem 0; }
+.audience-section  { padding: 8rem 0; background: rgba(255,255,255,0.02); }
+.faq-section       { padding: 8rem 0; }
 .final-cta         { padding: 8rem 0; background: rgba(255,255,255,0.02); }
 
-/* Credibility layout */
-.credibility-inner {
+/* Promise Grid */
+.promise-grid {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 4rem;
-    align-items: center;
-    max-width: 960px;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    max-width: 1000px;
     margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
 }
-.credibility-photo img {
-    width: 100%;
-    border-radius: 50%;
-    border: 3px solid rgba(255,255,255,0.15);
+.promise-card {
+    padding: 2.5rem 2rem;
+    background: var(--black);
+}
+.promise-card h3 {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+}
+.promise-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--gray);
+    opacity: 0.8;
 }
 
-/* Final CTA note */
-.cta-note {
+/* Process Grid */
+.process-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.process-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.process-row:last-child { border-bottom: none; }
+.process-label {
+    padding: 1.25rem 1.5rem;
+    font-weight: 700;
     font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    background: rgba(255,255,255,0.03);
+    border-right: 1px solid rgba(255,255,255,0.06);
+}
+.process-desc {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--gray);
+    opacity: 0.85;
+}
+
+/* Audience Grid */
+.audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+}
+.audience-col {
+    padding: 2.5rem 2rem;
+    background: var(--black);
+}
+.audience-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+    color: var(--gray);
+}
+.audience-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.audience-col li {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 1.4rem;
+    position: relative;
+    color: var(--gray);
+    opacity: 0.85;
+}
+.audience-col.for li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--white);
+}
+.audience-col.not-for li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    opacity: 0.5;
+}
+.audience-col.not-for li {
+    opacity: 0.45;
+}
+
+/* FAQ */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+}
+.faq-item {
+    background: var(--black);
+    padding: 1.5rem 2rem;
+}
+.faq-item summary {
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 400;
+    opacity: 0.4;
+    transition: transform 0.2s;
+}
+.faq-item[open] summary::after {
+    content: '−';
+}
+.faq-item p {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--gray);
+    opacity: 0.8;
+}
+
+/* Eyebrow */
+.eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: var(--gray);
     opacity: 0.5;
     margin-bottom: 2rem;
+}
+.hero-subheadline {
+    font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+    color: var(--gray);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* Respect / Highlight box */
+.respect-section { padding: 4rem 0; }
+.highlight-box {
+    border-left: 4px solid var(--white);
+    background: rgba(255,255,255,0.04);
+    padding: 1.75rem 2rem;
+    max-width: 760px;
+    margin: 0 auto;
+}
+.highlight-text {
+    font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+}
+.highlight-box p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--gray);
+    opacity: 0.8;
 }
 
 /* Footer */
@@ -200,169 +354,18 @@ h2 {
     .container, .nav-container { padding: 0 1.5rem; }
     .hero { padding: 4rem 0; min-height: auto; }
     section { padding: 5rem 0 !important; }
-    .credibility-inner {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        text-align: center;
+    .promise-grid { grid-template-columns: 1fr; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .process-row { grid-template-columns: 1fr; }
+    .process-label {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding-bottom: 0.5rem;
     }
-    .credibility-photo img { max-width: 220px; margin: 0 auto; display: block; }
-    .callout { padding: 1.5rem; }
+    .process-desc { padding-top: 0.5rem; }
+    .faq-item { padding: 1.25rem 1.5rem; }
 }
 @media (max-width: 480px) {
     .nav-cta { font-size: 0.85rem; padding: 0.65rem 1.1rem; }
     .cta-button { padding: 1rem 2rem; font-size: 1rem; }
-}
-
-/* Economy Comparison Section */
-.economy-section {
-    padding: 8rem 0;
-    background: rgba(255,255,255,0.02);
-}
-
-.economy-intro {
-    max-width: 760px;
-    margin: 0 auto 4rem;
-    text-align: center;
-}
-
-.economy-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    max-width: 1000px;
-    margin: 0 auto;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.economy-col {
-    padding: 3rem 2.5rem;
-}
-
-.economy-col.dim {
-    background: rgba(255,255,255,0.02);
-    border-right: 1px solid rgba(255,255,255,0.08);
-}
-
-.economy-col.bright {
-    background: rgba(255,255,255,0.05);
-}
-
-.economy-col-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 0.6rem;
-}
-
-.economy-col.dim .economy-col-label {
-    color: var(--gray);
-    opacity: 0.35;
-}
-
-.economy-col.bright .economy-col-label {
-    color: var(--white);
-    opacity: 0.7;
-}
-
-.economy-col-title {
-    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 2rem;
-}
-
-.economy-col.dim .economy-col-title {
-    color: var(--gray);
-    opacity: 0.45;
-}
-
-.economy-col.bright .economy-col-title {
-    color: var(--white);
-}
-
-.economy-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.economy-list li {
-    font-size: 1rem;
-    line-height: 1.6;
-    padding-left: 1.4rem;
-    position: relative;
-}
-
-.economy-col.dim .economy-list li {
-    color: var(--gray);
-    opacity: 0.4;
-}
-
-.economy-col.dim .economy-list li::before {
-    content: '–';
-    position: absolute;
-    left: 0;
-    opacity: 0.5;
-}
-
-.economy-col.bright .economy-list li {
-    color: var(--gray);
-    opacity: 0.85;
-}
-
-.economy-col.bright .economy-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--white);
-}
-
-.economy-callout {
-    max-width: 760px;
-    margin: 3rem auto 0;
-    text-align: center;
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-@media (max-width: 768px) {
-    .economy-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-    .economy-col.dim {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .economy-col {
-        padding: 2.5rem 1.75rem;
-    }
-}
-
-/* Calendly Section */
-.calendly-wrapper {
-    margin-top: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 60px rgba(255, 255, 255, 0.04);
-    background: #0d0d0d;
-}
-
-.calendly-inline-widget {
-    display: block;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .calendly-inline-widget {
-        height: 900px !important;
-    }
 }

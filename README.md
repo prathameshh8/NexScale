@@ -1,28 +1,20 @@
-# GoNexScale Landing Page
+# OldSkoolMail
 
-A high-converting, dark-themed landing page for GoNexScale — helping YouTube creators understand how the algorithm actually works.
+The most organic cold email agency on earth. No automation. No AI slop. No scraped lists.
 
 ## Features
 
 - **Dark Theme**: Black background with white/gray text for high contrast
 - **Inter Typography**: Clean, modern sans-serif throughout
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
-- **Single Goal**: Designed to convert visitors into booked discovery calls
+- **Single Goal**: Designed to convert visitors into email inquiries
 
 ## Setup
 
-1. **Calendly Link**: Already configured in `index.html` — update the `data-url` in the Calendly widget if needed.
-
-2. **Open the Page**:
-   - Simply open `index.html` in a web browser
-   - Or serve it using a local server:
-     ```bash
-     # Python 3
-     python -m http.server 8000
-
-     # Node.js
-     npx http-server
-     ```
+Open `index.html` in a web browser or serve it locally:
+```bash
+python -m http.server 8000
+```
 
 ## File Structure
 
@@ -31,10 +23,9 @@ A high-converting, dark-themed landing page for GoNexScale — helping YouTube c
 ├── index.html               # Main landing page
 ├── privacy-policy.html      # Privacy policy
 ├── terms-and-conditions.html # Terms and conditions
-├── thank-you.html           # Post-booking confirmation page
+├── thank-you.html           # Confirmation page
 ├── styles.css               # All styling and theme
 ├── favicon.ico              # Site favicon
-├── Logo/                    # Logo assets
 └── img/                     # Image assets
 ```
 
